@@ -4,6 +4,7 @@ import bussines.Desk;
 import bussines.TV;
 import productManager.Manager;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class EditProductCommand extends Command implements ICommand {
@@ -12,10 +13,10 @@ public class EditProductCommand extends Command implements ICommand {
     }
 
     @Override
-    public void execute() {
+    public void execute() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter product` code which you want to remove");
-        int code=scanner.nextInt();
+        int code = scanner.nextInt();
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getCode() == code) {
 
@@ -34,6 +35,7 @@ public class EditProductCommand extends Command implements ICommand {
                     tv.setCode(newCode);
                     tv.setPrice(newPrice);
                     tv.setInch(newInch);
+                    file.writeIntoFile(list, path);
                 } else {
                     Desk desk = (Desk) list.get(i);
                     System.out.println("enter new color");
@@ -43,7 +45,9 @@ public class EditProductCommand extends Command implements ICommand {
                     desk.setPrice(newPrice);
                     desk.setColor(newColor);
                 }
+                break;
             }
         }
+        file.writeIntoFile(list, path);
     }
 }

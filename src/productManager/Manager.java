@@ -5,27 +5,27 @@ import bussines.Product;
 import bussines.TV;
 import command.ICommand;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Manager {
-    public ArrayList<Product> list = new ArrayList<>();
+
     private ICommand iCommand;
 
-    public void edit() {
-        this.iCommand.execute();
-
-    }
-
-    public void remove() {
-      this.iCommand.execute();
-    }
-
-    public void add() {
+    public void edit() throws IOException {
         this.iCommand.execute();
     }
 
-    public void display() {
+    public void remove() throws IOException {
+        this.iCommand.execute();
+    }
+
+    public void add() throws IOException {
+        this.iCommand.execute();
+    }
+
+    public void display() throws IOException {
         this.iCommand.execute();
     }
 }

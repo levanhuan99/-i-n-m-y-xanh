@@ -9,6 +9,10 @@ public class DisplayProductCommand extends Command implements ICommand {
 
     @Override
     public void execute() {
+        if (list.size() == 0) {
+            System.out.println("list is empty!");
+            return;
+        }
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i).toString());
         }

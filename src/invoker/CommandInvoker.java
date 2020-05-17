@@ -2,6 +2,8 @@ package invoker;
 
 import command.ICommand;
 
+import java.io.IOException;
+
 public class CommandInvoker {
     private ICommand iCommand;
 
@@ -11,8 +13,9 @@ public class CommandInvoker {
 
     public CommandInvoker() {
     }
-    public void executeCommand(){
-        if (this.iCommand!=null){
+
+    public void executeCommand() throws IOException {
+        if (this.iCommand != null) {
             this.iCommand.execute();
         }
     }
