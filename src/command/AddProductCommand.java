@@ -15,7 +15,7 @@ public class AddProductCommand extends Command implements ICommand {
 
     @Override
     public void execute() throws IOException {
-        System.out.println("which kind of product you wwant to add ?");
+        System.out.println("which kind of product you want to add ?");
         System.out.println("1.TV");
         System.out.println("2.Desk");
         Scanner scanner = new Scanner(System.in);

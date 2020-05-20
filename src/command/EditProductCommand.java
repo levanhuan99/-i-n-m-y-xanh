@@ -49,5 +49,6 @@ public class EditProductCommand extends Command implements ICommand {
             }
         }
         file.writeIntoFile(list, path);
+
     }
 }
